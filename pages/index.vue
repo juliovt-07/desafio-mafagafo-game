@@ -1,5 +1,6 @@
 <template>
-  <div class="bg-gradient-to-b from-indigo-700 to-indigo-500 min-h-screen px-10 py-5">
+  <div class="bg-gradient-to-b from-indigo-700 to-indigo-500 min-h-screen px-10 pt-5 relative">
+    <canvas v-show="finish" id="my-canvas" class="absolute top-0"></canvas>
     <header class="flex flex-col sm:flex-row justify-between items-center max-w-7xl mx-auto">
       <a href="https://mafagafo.com/" class="cursor-pointer">      
         <h1 class="animate__animated animate__bounce animate__delay-4s">
@@ -45,6 +46,7 @@
 <script>
 import 'animate.css'
 import moment from 'moment'
+import ConfettiGenerator from 'confetti-js'
 
 export default {
   name: 'IndexPage',
@@ -56,7 +58,12 @@ export default {
     }
   },
   mounted() {
-    var evento  = new Date(2022, 1, 15, 3, 1)
+    var confettiElement = document.getElementById('my-canvas');
+    var confettiSettings = { target: confettiElement };
+    var confetti = new ConfettiGenerator(confettiSettings);
+    confetti.render();
+
+    var evento  = new Date(2022, 1, 15, 3)
       , atual   = new Date().getTime()
       , duracao = moment.duration(evento - atual, 'milliseconds')
     
