@@ -15,7 +15,7 @@
       </a>
     </header>
     <div class="flex flex-col items-center justify-center gap-10 md:gap-5 mt-20 md:mt-40 md:flex-row px-10">
-      <div class="time text-gray-300">
+      <div v-if="!finish" class="time text-gray-300">
         <p v-show="!loading" class="text-4xl mb-4 text-left">Restam</p>
         <div v-if="loading" class="loading"/>
         <p v-else class="text-7xl text-center min-w-72 border border-white-100 p-4 rounded-md animate__animated animate__pulse animate__infinite animate__slow">
@@ -51,11 +51,12 @@ export default {
   data() {
     return {
       duration: {},
-      loading: true
+      loading: true,
+      finish: false
     }
   },
   mounted() {
-    var evento  = new Date(2022, 1, 17)
+    var evento  = new Date(2022, 1, 15, 2, 41)
       , atual   = new Date().getTime()
       , duracao = moment.duration(evento - atual, 'milliseconds')
     
@@ -64,6 +65,9 @@ export default {
     setInterval(() => {
       duracao = moment.duration(duracao - 1000, 'milliseconds')
       this.duration = duracao._data
+      if (this.duration.minutes <= 0 && this.duration.seconds <= 0 && this.duration.hours <=0 && this.duration.days <= 0) {
+        this.finish = true
+      }
     }, 1000)
 
     setTimeout(() => {
