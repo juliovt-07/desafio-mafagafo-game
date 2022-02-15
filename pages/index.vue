@@ -56,7 +56,7 @@ export default {
     }
   },
   mounted() {
-    var evento  = new Date(2022, 1, 15, 2, 41)
+    var evento  = new Date(2022, 1, 15, 3, 1)
       , atual   = new Date().getTime()
       , duracao = moment.duration(evento - atual, 'milliseconds')
     
