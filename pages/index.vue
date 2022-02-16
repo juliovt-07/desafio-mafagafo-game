@@ -16,7 +16,7 @@
       </a>
     </header>
 
-    <div class="text mt-10 md:mt-32 text-center text-white">
+    <div class="mt-10 md:mt-20 text-center text-white">
       <h2 class="font-semibold text-3xl">
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. <br>
         Ipsam voluptatum repudiandae.
@@ -27,7 +27,7 @@
       </h6>
     </div>
 
-    <div class="flex flex-col items-center justify-center gap-10 md:gap-20 mt-20 md:mt-40 md:flex-row">
+    <div class="flex flex-col items-center justify-center gap-10 md:gap-20 mt-20 md:flex-row">
       <div v-if="!finish" class="time text-gray-300">
         <p v-show="!loading" class="text-4xl mb-4 text-left">Restam</p>
         <div v-if="loading" class="loading"/>
@@ -40,6 +40,18 @@
       </div>
       <div>
         <img src="/mafa-1.png" alt="mafa 1" width="400" style="max-width: 370px;">
+      </div>
+    </div>
+
+    <div class="mx-auto text-center text-white mt-20">
+      <h6 class="text-xl">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      </h6>
+    </div>
+    <div class="mx-auto w-min flex justify-center items-center mt-5 rounded-lg border border-l-0">
+      <input type="email" placeholder="mafauser@mafamail.com" v-model="email" class="py-3 px-3 rounded-l-lg outline-none text-gray-600 font-semibold">
+      <div @click="clear()" class="text-white w-max px-3 py-2 text-lg font-semibold cursor-pointer opacity-50 hover:opacity-100 hover:bg-indigo-600 rounded-r-lg ease-in duration-200">
+        Notificar-me
       </div>
     </div>
   </div>
@@ -56,7 +68,8 @@ export default {
     return {
       duration: {},
       loading: true,
-      finish: false
+      finish: false,
+      email: ''
     }
   },
   mounted() {
@@ -82,6 +95,11 @@ export default {
     setTimeout(() => {
       this.loading = false
     }, 5000)
+  },
+  methods: {
+    clear() {
+      this.email = ''
+    }
   }
 }
 </script>
