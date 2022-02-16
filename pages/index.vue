@@ -20,7 +20,7 @@
         <p v-show="!loading" class="text-4xl mb-4 text-left">Restam</p>
         <div v-if="loading" class="loading"/>
         <p v-else class="text-7xl text-center min-w-72 border border-white-100 p-4 rounded-md animate__animated animate__pulse animate__infinite animate__slow">
-          <span v-show="(duration.hours + 24*duration.days) > 0"><span v-show="duration.hours < 10">0</span>{{ duration.hours + 24*duration.days }}:</span><span v-show="duration.minutes < 10">0</span>{{ duration.minutes }}:<span v-show="duration.seconds < 10">0</span>{{ duration.seconds }}
+          <span v-show="(duration.hours + 24*duration.days) > 0"><span v-show="(duration.hours + 24*duration.days) < 10">0</span>{{ duration.hours + 24*duration.days }}:</span><span v-show="duration.minutes < 10">0</span>{{ duration.minutes }}:<span v-show="duration.seconds < 10">0</span>{{ duration.seconds }}
         </p>
         <p v-show="!loading" class="text-4xl mt-4 text-right">
           {{ (duration.hours + 24*duration.days) == 0 ? 'Minutos' : 'Horas' }}
