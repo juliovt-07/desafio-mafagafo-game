@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gradient-to-b from-indigo-700 to-indigo-500 min-h-screen px-10 pt-5 relative">
+  <div class="bg-gradient-to-b from-indigo-700 to-indigo-500 min-h-screen px-10 pt-5 pb-10 relative">
     <canvas v-show="finish" id="my-canvas" class="absolute top-0"></canvas>
     <header class="flex flex-col sm:flex-row justify-between items-center max-w-7xl mx-auto">
       <a href="https://mafagafo.com/" class="cursor-pointer">      
@@ -54,6 +54,9 @@
         Notificar-me
       </div>
     </div>
+    <footer class="text-center text-white mt-20">
+      <p>© {{ new Date().getFullYear() }} <a href="https://julioeu.vercel.app/">Future Mafa Developer</a></p>
+    </footer>
   </div>
 </template>
 
