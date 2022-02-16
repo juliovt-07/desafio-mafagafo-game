@@ -15,7 +15,19 @@
         </div>
       </a>
     </header>
-    <div class="flex flex-col items-center justify-center gap-10 md:gap-5 mt-20 md:mt-40 md:flex-row px-10">
+
+    <div class="text mt-10 md:mt-32 text-center text-white">
+      <h2 class="font-semibold text-3xl">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. <br>
+        Ipsam voluptatum repudiandae.
+      </h2>
+      <h6 class="text-2xl mt-5">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
+        Commodi repellat voluptates quas rem minima
+      </h6>
+    </div>
+
+    <div class="flex flex-col items-center justify-center gap-10 md:gap-20 mt-20 md:mt-40 md:flex-row">
       <div v-if="!finish" class="time text-gray-300">
         <p v-show="!loading" class="text-4xl mb-4 text-left">Restam</p>
         <div v-if="loading" class="loading"/>
@@ -27,18 +39,8 @@
         </p>
       </div>
       <div>
-        <img src="/mafa-1.png" alt="mafa 1" width="500" style="max-width: 370px;">
+        <img src="/mafa-1.png" alt="mafa 1" width="400" style="max-width: 370px;">
       </div>
-    </div>
-    <div class="text mt-10 md:mt-32 text-center text-white">
-      <h2 class="font-semibold text-3xl">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. <br>
-        Ipsam voluptatum repudiandae.
-      </h2>
-      <h6 class="text-2xl mt-5">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
-        Commodi repellat voluptates quas rem minima
-      </h6>
     </div>
   </div>
 </template>
