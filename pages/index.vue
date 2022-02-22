@@ -81,7 +81,7 @@ export default {
     var confetti = new ConfettiGenerator(confettiSettings);
     confetti.render();
 
-    var evento  = new Date(2022, 1, 20)
+    var evento  = new Date(2022, 1, 23)
       , atual   = new Date().getTime()
       , duracao = moment.duration(evento - atual, 'milliseconds')
     
